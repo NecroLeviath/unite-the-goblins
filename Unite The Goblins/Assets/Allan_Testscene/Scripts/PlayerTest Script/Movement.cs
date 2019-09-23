@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button1))
         {
             GetComponent<Rigidbody>().AddForce(new Vector3(0, 7, 0), ForceMode.Impulse);
         }
@@ -69,6 +69,11 @@ public class Movement : MonoBehaviour
             Vector3 tempVect = new Vector3(h, 0, v);
         tempVect = tempVect.normalized * speed * Time.deltaTime;
         rb.MovePosition(transform.position + tempVect);
+    }
+
+    public void FixedUpdate()
+    {
+        
     }
 
     void Death()

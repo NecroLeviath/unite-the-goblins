@@ -19,7 +19,7 @@ public class Activate : MonoBehaviour
         text.transform.Rotate(0, 0, 0);
         text.transform.localScale -= new Vector3(0.8f, 0.8f, 0.8f);
         TextMesh t = text.AddComponent<TextMesh>();
-        t.text = "Press E to DIE slowly and painfully";
+        t.text = "Press E or Square to DIE slowly and painfully";
         t.fontSize = 24;
         text.SetActive(false);
     }
@@ -43,6 +43,11 @@ public class Activate : MonoBehaviour
         {
             text.SetActive(true);
             if (Input.GetKey(KeyCode.E))
+            {
+                ActivateFunction();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 ActivateFunction();
             }

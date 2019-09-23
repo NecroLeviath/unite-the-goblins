@@ -24,7 +24,7 @@ public class Falldown : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!hasKilledPlayer)
+        if (!hasKilledPlayer && collision.gameObject.tag == "PlayerCharacter")
         {
             collision.gameObject.SendMessage("Death");
         }

@@ -9,7 +9,7 @@ public class MovingPlatformPoints : MonoBehaviour
     public float allowence = 0.1f;
     public float speed;
     float countDown;
-    float delay = 2.2f;
+    float delay = 3.2f;
     private GameObject target = null;
     private Vector3 offset;
 
