@@ -27,17 +27,17 @@ public class CharacterManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Player1"))
+        if (Input.GetKeyDown("1"))
         {
             SetCurrentActiveCharacter(players[0]);
         }
 
-        if (Input.GetButtonDown("Player2"))
+        if (Input.GetKeyDown("2"))
         {
             SetCurrentActiveCharacter(players[1]);
         }
 
-        if (Input.GetButtonDown("Player3"))
+        if (Input.GetKeyDown("3"))
         {
             SetCurrentActiveCharacter(players[2]);
         }
