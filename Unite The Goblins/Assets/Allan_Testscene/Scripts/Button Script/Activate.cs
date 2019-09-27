@@ -7,11 +7,13 @@ public class Activate : MonoBehaviour
 {
     public GameObject other;
     bool showText = false;
-    public Text showCost;
     GameObject text;
+    bool collisionDetected;
+
     // Start is called before the first frame update
     void Start()
     {
+        collisionDetected = false;
         text = new GameObject();
         text.transform.parent = gameObject.transform;
         text.transform.position = gameObject.transform.position;
@@ -27,14 +29,13 @@ public class Activate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (showText)
-        //{
-        //    showCost.text = "Pay 250 schmeckles for a cool weapon thingy";
-        //}
-        //else
-        //{
-        //    showCost.text = "";
-        //}
+        if (collisionDetected)
+        {
+            if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("PS4_Square"))
+            {
+                ActivateFunction();
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -42,15 +43,7 @@ public class Activate : MonoBehaviour
         if (other.gameObject.tag == "PlayerCharacter")
         {
             text.SetActive(true);
-            if (Input.GetKey(KeyCode.E))
-            {
-                ActivateFunction();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Joystick1Button0))
-            {
-                ActivateFunction();
-            }
+            collisionDetected = true;
         }
     }
 
@@ -64,6 +57,7 @@ public class Activate : MonoBehaviour
         if (other.gameObject.tag == "PlayerCharacter")
         {
             text.SetActive(false);
+            collisionDetected = false;
         }
     }
 }
