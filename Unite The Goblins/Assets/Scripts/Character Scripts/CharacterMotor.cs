@@ -620,7 +620,7 @@ public class CharacterMotor : MonoBehaviour
         return (groundNormal.y <= Mathf.Cos(controller.slopeLimit * Mathf.Deg2Rad));
     }
 
-    Vector3 GetDirection()
+    public Vector3 GetDirection()
     {
         return inputMoveDirection;
     }

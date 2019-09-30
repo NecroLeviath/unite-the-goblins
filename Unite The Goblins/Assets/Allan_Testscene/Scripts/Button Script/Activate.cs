@@ -47,7 +47,7 @@ public class Activate : MonoBehaviour
         }
     }
 
-    void ActivateFunction()
+    public void ActivateFunction()
     {
         other.SendMessage("IsActive");
     }

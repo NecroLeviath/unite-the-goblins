@@ -9,6 +9,9 @@ TagManager:
   - Box
   - Liftable
   - Stealth
+  - DestroyableBlock
+  - Button
+  - Pebble
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Character
+  - Pebble
   - 
   - 
   - 

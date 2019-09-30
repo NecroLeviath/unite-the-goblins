@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 8756225302414441788}
   - component: {fileID: 8756225302414441791}
   - component: {fileID: 7355644364562078267}
-  m_Layer: 0
-  m_Name: Character1
+  m_Layer: 8
+  m_Name: MobileCharacter
   m_TagString: PlayerCharacter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
