@@ -45,6 +45,16 @@ public class CharacterMotor : MonoBehaviour
         public float gravity = 0.0f;
         public float maxFallSpeed = 20.0f;
 
+        public void SetSpeed(float f)
+        {
+            maxForwardSpeed = f;
+        }
+
+        public float ReturnSpeed()
+        {
+            return maxForwardSpeed;
+        }
+
         // For the next variables, [System.NonSerialized] tells Unity to not serialize the variable or show it in the inspector view.
         // Very handy for organization!
 
