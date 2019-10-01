@@ -148,7 +148,7 @@ MonoBehaviour:
     gravity: 30
     maxFallSpeed: 20
   jumping:
-    enabled: 1
+    enabled: 0
     baseHeight: 0.5
     extraHeight: 1.5
     perpAmount: 0
