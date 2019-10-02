@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     public GameObject[] players;
-    public Camera camera;
+    public Camera ChaseCam;
     
     void Start()
     {
@@ -21,7 +21,7 @@ public class CharacterManager : MonoBehaviour
             players[i].GetComponent<PlatformInputController>().enabled = false;
         }
 
-        camera.GetComponent<SmoothCamera>().target = player.transform;
+        ChaseCam.GetComponent<SmoothCamera>().target = player.transform;
         player.GetComponent<PlatformInputController>().enabled = true;
     }
 
