@@ -27,7 +27,7 @@ public class LevelCompletion : MonoBehaviour
             numPlayersFinished++;
         }
 
-        if (characterManager.players.Length == numPlayersFinished)
+        if (characterManager.players.Count == numPlayersFinished)
         {
             SceneManager.LoadScene(nextScene);
         }

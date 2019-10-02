@@ -6,7 +6,7 @@ public class Shapeshift : MonoBehaviour
 {
     PlayerSync ps;
     CharacterMotor cm;
-    bool abilityUsed;
+    public bool abilityUsed;
     float timer = 0.02f;
 
     // Start is called before the first frame update

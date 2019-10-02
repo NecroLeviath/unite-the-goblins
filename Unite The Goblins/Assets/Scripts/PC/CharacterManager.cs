@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
-    public GameObject[] players;
+    [HideInInspector]
+    public List<GameObject> players;
     public Camera ChaseCam;
     
     void Start()
     {
+        players = new List<GameObject>(GameObject.FindGameObjectsWithTag("PlayerCharacter"));
         SetCurrentActiveCharacter(players[0]);
+
+        Physics.IgnoreCollision(players[0].GetComponent<Collider>(), players[1].GetComponent<Collider>());
+        Physics.IgnoreCollision(players[0].GetComponent<Collider>(), players[2].GetComponent<Collider>());
+        Physics.IgnoreCollision(players[1].GetComponent<Collider>(), players[2].GetComponent<Collider>());
     }
 
     private void SetCurrentActiveCharacter(GameObject player)
     {
-        for (int i = 0; i != players.Length; ++i)
+        for (int i = 0; i != players.Count; ++i)
         {
             players[i].GetComponent<CharacterMotor>().inputMoveDirection = Vector2.zero;
             players[i].GetComponent<CharacterMotor>().inputJump = false;

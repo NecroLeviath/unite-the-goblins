@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5148998487805094594}
   - component: {fileID: 5148998487805094593}
   - component: {fileID: 6405466460231421381}
+  - component: {fileID: 1558126063459915878}
   m_Layer: 8
   m_Name: StrongCharacter
   m_TagString: PlayerCharacter
@@ -185,7 +186,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f51ebbaf9fbed746bf41a544901c554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  c: {fileID: 0}
+  c: {fileID: 3572517185392941451, guid: ccd517d3b1f2fe545942f3afa0b7444e, type: 3}
+--- !u!114 &1558126063459915878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148998487805094592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d69853dbd3ef64b99c7214859de1bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tinkererCharacter: {fileID: 0}
 --- !u!1 &6069766888772527716
 GameObject:
   m_ObjectHideFlags: 0
