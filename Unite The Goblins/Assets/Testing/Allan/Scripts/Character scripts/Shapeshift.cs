@@ -8,6 +8,7 @@ public class Shapeshift : MonoBehaviour
     CharacterMotor cm;
     public bool abilityUsed;
     float timer = 0.02f;
+    bool reset;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class Shapeshift : MonoBehaviour
         ps = gameObject.transform.GetComponent<PlayerSync>();
         cm = gameObject.transform.GetComponent <CharacterMotor>();
         abilityUsed = false;
+        reset = false;
     }
 
     // Update is called once per frame
@@ -38,17 +40,22 @@ public class Shapeshift : MonoBehaviour
                 transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 abilityUsed = false;
                 gameObject.transform.Translate(new Vector3(0, 1, 0));
+                reset = true;
             }
         }
     }
 
     private void FixedUpdate()
     {
-        timer -= Time.deltaTime;
-        if (timer < 0)
+        if (reset)
         {
-            cm.enabled = true;
-            timer = 0.02f;
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                cm.enabled = true;
+                timer = 0.02f;
+                reset = false;
+            }
         }
     }
 }
