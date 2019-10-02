@@ -12,7 +12,7 @@ public class Run : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = gameObject.transform.parent.GetComponent<PlayerSync>();
+        ps = gameObject.transform.GetComponent<PlayerSync>();
         cm = gameObject.transform.GetComponent<CharacterMotor>();
         abilityUsed = false;
         standardSpeed = cm.movement.ReturnSpeed();
@@ -25,7 +25,7 @@ public class Run : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("PS4_R2"))
             {
-                gameObject.transform.parent.SendMessage("AbilityIsUsed", true);
+                gameObject.transform.SendMessage("AbilityIsUsed", true);
                 cm.movement.SetSpeed(standardSpeed * 2);
                 abilityUsed = true;
             }
@@ -34,7 +34,7 @@ public class Run : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("PS4_R2"))
             {
-                gameObject.transform.parent.SendMessage("AbilityIsUsed", false);
+                gameObject.transform.SendMessage("AbilityIsUsed", false);
                 cm.movement.SetSpeed(standardSpeed);
                 abilityUsed = false;
             }

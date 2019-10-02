@@ -14,7 +14,7 @@ public class Stealth : MonoBehaviour
     {
         rend =  gameObject.GetComponent<Renderer>();
         color = rend.material.color;
-        ps = gameObject.transform.parent.GetComponent<PlayerSync>();
+        ps = gameObject.transform.GetComponent<PlayerSync>();
         abilityUsed = false;
     }
 
@@ -28,7 +28,7 @@ public class Stealth : MonoBehaviour
                 gameObject.tag = "Stealth";
                 color.a = 0.2f;
                 rend.material.color = color;
-                gameObject.transform.parent.SendMessage("AbilityIsUsed", true);
+                gameObject.transform.SendMessage("AbilityIsUsed", true);
                 abilityUsed = true;
             }
         }
@@ -39,7 +39,7 @@ public class Stealth : MonoBehaviour
                 gameObject.tag = "PlayerCharacter";
                 color.a = 1.0f;
                 rend.material.color = color;
-                gameObject.transform.parent.SendMessage("AbilityIsUsed", false);
+                gameObject.transform.SendMessage("AbilityIsUsed", false);
                 abilityUsed = false;
             }
         }
