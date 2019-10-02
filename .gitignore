@@ -27,6 +27,7 @@ sysinfo.txt
 *.userprefs
 *.pidb
 .DS_Store
+.vs/
 
 ###
 # OS generated
@@ -38,4 +39,3 @@ sysinfo.txt
 .Trashes
 Icon?
 ehthumbs.db
-Thumbs.db
