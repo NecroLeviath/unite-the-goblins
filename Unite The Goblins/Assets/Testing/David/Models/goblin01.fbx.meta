@@ -3,7 +3,12 @@ guid: 24104d8c41b4a4b4ebc56f26d65f6e44
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: goblin_proto01_matGoblin01
+    second: {fileID: 2100000, guid: df42509ccea4fa04bb69a5d9246f29a0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
