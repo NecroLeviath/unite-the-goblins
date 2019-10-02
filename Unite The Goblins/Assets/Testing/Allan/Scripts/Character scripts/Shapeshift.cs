@@ -12,7 +12,7 @@ public class Shapeshift : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = gameObject.transform.parent.GetComponent<PlayerSync>();
+        ps = gameObject.transform.GetComponent<PlayerSync>();
         cm = gameObject.transform.GetComponent <CharacterMotor>();
         abilityUsed = false;
     }
@@ -24,7 +24,7 @@ public class Shapeshift : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("PS4_O"))
             {
-                gameObject.transform.parent.SendMessage("AbilityIsUsed", true);
+                gameObject.transform.SendMessage("AbilityIsUsed", true);
                 transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 abilityUsed = true;
             }
@@ -34,7 +34,7 @@ public class Shapeshift : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("PS4_O"))
             {
                 cm.enabled = false;
-                gameObject.transform.parent.SendMessage("AbilityIsUsed", false);
+                gameObject.transform.SendMessage("AbilityIsUsed", false);
                 transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 abilityUsed = false;
                 gameObject.transform.Translate(new Vector3(0, 1, 0));

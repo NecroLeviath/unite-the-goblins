@@ -17,7 +17,7 @@ public class Glider : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && !GetComponent<CharacterMotor>().grounded)
+        if ((Input.GetKeyDown(KeyCode.E) && !GetComponent<CharacterMotor>().grounded) || (Input.GetButtonDown("PS4_O") && !GetComponent<CharacterMotor>().grounded))
         {
             isActive = !isActive;
         }

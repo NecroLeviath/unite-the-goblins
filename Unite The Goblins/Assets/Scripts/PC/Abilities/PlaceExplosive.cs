@@ -14,7 +14,7 @@ public class PlaceExplosive : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("PS4_Triangle"))
         {
             if (!explosiveActive)
             {
