@@ -12,6 +12,7 @@ public class PlatformInputController : MonoBehaviour
 {
     public bool autoRotate = true;
     public float maxRotationSpeed = 360.0f;
+    public bool moveAllDirectionsForTest = false;
 
     private CharacterMotor motor;
 
@@ -25,7 +26,15 @@ public class PlatformInputController : MonoBehaviour
     void Update()
     {
         // Get the input vector from kayboard or analog stick
-        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        Vector3 directionVector;
+        if (!moveAllDirectionsForTest)
+        {
+            directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
+        }
+        else
+        {
+            directionVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        }
 
         if (directionVector != Vector3.zero)
         {

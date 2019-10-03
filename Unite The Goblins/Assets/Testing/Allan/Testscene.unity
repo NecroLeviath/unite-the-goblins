@@ -516,6 +516,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1881650869711226082, guid: 0013d2612dec76941a1d627aaa5a0e53,
+        type: 3}
+      propertyPath: moveAllDirectionsForTest
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0013d2612dec76941a1d627aaa5a0e53, type: 3}
 --- !u!4 &557402391 stripped
