@@ -25,7 +25,7 @@ public class PlatformInputController : MonoBehaviour
     void Update()
     {
         // Get the input vector from kayboard or analog stick
-        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        Vector3 directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
 
         if (directionVector != Vector3.zero)
         {
