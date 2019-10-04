@@ -1,0 +1,15 @@
+Create new prefabs with this example  structure:
+
+VeryNicePlatform (empty gameobject)
+    SomeOtherNiceGameobject (Effects, sounds, lights  etc)
+	OneMoreNiceGameobject (Effects, sounds, lights  etc)
+	ImportedMeshObject (located under some models folder)
+	...
+
+BadExampleGameobject (imported mesh)
+    SomeOtherNiceGameobject (Effects, sounds, lights  etc)
+	OneMoreNiceGameobject (Effects, sounds, lights  etc)
+	...
+
+In the 'VeryNicePlatform' I can replace the mesh easily, 
+but not so easy in 'BadExampleGameobject'.
