@@ -21,7 +21,7 @@ public class Activate : MonoBehaviour
         text.transform.Rotate(0, 0, 0);
         text.transform.localScale -= new Vector3(0.8f, 0.8f, 0.8f);
         TextMesh t = text.AddComponent<TextMesh>();
-        t.text = "Press E or Square to DIE slowly and painfully";
+        t.text = "Press E or Square to activate button";
         t.fontSize = 24;
         text.SetActive(false);
     }
@@ -49,7 +49,8 @@ public class Activate : MonoBehaviour
 
     public void ActivateFunction()
     {
-        other.SendMessage("IsActive");
+        //other.SendMessage("IsActive");
+        other.BroadcastMessage("IsActive");
     }
 
     private void OnTriggerExit(Collider other)

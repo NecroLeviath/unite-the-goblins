@@ -10,8 +10,9 @@ public class MovingPlatformPoints : MonoBehaviour
     public float speed;
     float countDown;
     float delay = 3.2f;
-    private GameObject target = null;
-    private Vector3 offset;
+    GameObject target = null;
+    public bool isActivatable = false;
+    bool isActive = false;
 
     // Use this for initialization
     void Start()
@@ -25,19 +26,18 @@ public class MovingPlatformPoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Update this position
-        Vector3 thisPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-
-
-        // Distance between current position and next position < allowence
-        if (Vector3.Distance(thisPos, points[destPoint].position) < allowence)
+        if (!isActivatable || isActivatable && isActive)
         {
-            UpdateTarget();
-        }
+            Vector3 thisPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-        //transform.position = Vector3.LerpUnclamped(transform.position, points[destPoint].position, Time.deltaTime);
-        float step = speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, points[destPoint].position, step);
+            // Distance between current position and next position < allowence
+            if (Vector3.Distance(thisPos, points[destPoint].position) < allowence)
+            {
+                UpdateTarget();
+            }
+            float step = speed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, points[destPoint].position, step);
+        }
     }
 
     void UpdateTarget()
@@ -72,20 +72,11 @@ public class MovingPlatformPoints : MonoBehaviour
         }
     }
 
-    //void OnTriggerStay(Collider col)
-    //{
-    //    target = col.gameObject;
-    //    offset = target.transform.position - transform.position;
-    //}
-    //void OnTriggerExit(Collider col)
-    //{
-    //    target = null;
-    //}
-    //void LateUpdate()
-    //{
-    //    if (target != null)
-    //    {
-    //        target.transform.position = transform.position + offset;
-    //    }
-    //}
+    void IsActive()
+    {
+        if (isActivatable)
+        {
+            isActive = true;
+        }
+    }
 }

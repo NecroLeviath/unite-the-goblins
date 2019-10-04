@@ -12,7 +12,7 @@ public class Patrolling : MonoBehaviour
     int destPoint;
     public float allowence = 0.1f;
     float countDown;
-    float delay = 3.2f;
+    public float delay = 3.2f;
 
     // Start is called before the first frame update
     void Start()
