@@ -13,6 +13,7 @@ TagManager:
   - Button
   - Pebble
   - Hook
+  - Pushable
   layers:
   - Default
   - TransparentFX
