@@ -12,8 +12,9 @@ TagManager:
   - DestroyableBlock
   - Button
   - Pebble
-  - Hook
   - Pushable
+  - LedgeHook
+  - CeilingHook
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - 
   - Character
   - Pebble
-  - 
+  - Hook
   - 
   - 
   - 
