@@ -95,7 +95,7 @@ public class GrapplingHook : MonoBehaviour
 		var h = playerPosition.y - hookPosition.y;      // Distance between hook and ground
 		var a = -cm.movement.gravity;   // Gravity
 		var dir = d / Mathf.Abs(d);	// Direction
-		var v = ((2 * d) - (2 * h * dir)) / (2 * Mathf.Sqrt(2 * h / a));  // Horizontal velocity
+		var v = (d - ( h * dir)) / Mathf.Sqrt(2 * h / a);  // Horizontal velocity
 		return v;
 	}
 }
