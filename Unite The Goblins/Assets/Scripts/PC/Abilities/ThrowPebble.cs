@@ -21,7 +21,7 @@ public class ThrowPebble : MonoBehaviour
             shootDirection = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
             shootDirection.Normalize();
 
-            go.GetComponent<Rigidbody>().velocity = new Vector3(shootDirection.x * 10.0f, shootDirection.y * 10.0f, 0);
+            go.GetComponent<Rigidbody>().velocity = new Vector3(0, shootDirection.y * 10.0f, shootDirection.x * 10.0f);
         }
     }
 }
