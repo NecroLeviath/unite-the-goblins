@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 4ea7a38f3cef48a47aef0b1ed79adcb8
   - enabled: 1
-    path: Assets/Scenes/PrototypeLevel.unity
+    path: Assets/Testing/Ola/old_PrototypeLevel.unity
     guid: af8ff2d5d2bc4184ab8ced73560301ad
   m_configObjects: {}
