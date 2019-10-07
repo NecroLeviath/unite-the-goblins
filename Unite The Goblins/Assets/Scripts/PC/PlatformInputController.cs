@@ -11,7 +11,7 @@ using System.Collections.Generic;
 public class PlatformInputController : MonoBehaviour
 {
     public bool autoRotate = true;
-    public float maxRotationSpeed = 360.0f;
+    public float maxRotationSpeed = 10000.0f;
     public bool moveAllDirectionsForTest = false;
 
     private CharacterMotor motor;

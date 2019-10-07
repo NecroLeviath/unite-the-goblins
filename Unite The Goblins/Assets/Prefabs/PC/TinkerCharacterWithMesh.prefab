@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoRotate: 1
-  maxRotationSpeed: 360
+  maxRotationSpeed: 10000
   moveAllDirectionsForTest: 0
 --- !u!114 &1316382769613688637
 MonoBehaviour:

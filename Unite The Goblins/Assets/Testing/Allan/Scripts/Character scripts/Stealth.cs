@@ -12,7 +12,7 @@ public class Stealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rend =  gameObject.GetComponent<Renderer>();
+        rend =  gameObject.GetComponentInChildren<Renderer>();
         color = rend.material.color;
         ps = gameObject.transform.GetComponent<PlayerSync>();
         abilityUsed = false;
