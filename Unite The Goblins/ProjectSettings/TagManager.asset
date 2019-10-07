@@ -15,6 +15,7 @@ TagManager:
   - Pushable
   - LedgeHook
   - CeilingHook
+  - FollowPlatformObject
   layers:
   - Default
   - TransparentFX
