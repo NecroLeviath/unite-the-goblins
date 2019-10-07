@@ -18,7 +18,7 @@ public class GrapplingHook : MonoBehaviour
 
 	void Start()
 	{
-		lr = rope.GetComponent<LineRenderer>();
+        lr = new LineRenderer();
 		cm = GetComponent<CharacterMotor>();
 	}
 
@@ -83,7 +83,7 @@ public class GrapplingHook : MonoBehaviour
 	Vector3 GetMouseDirection()
 	{
 		var mousePos = Input.mousePosition;
-		mousePos.z = 10;
+		mousePos.x = -10;
 		mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 		var playerPos = transform.position;
 		return (mousePos - playerPos).normalized;
