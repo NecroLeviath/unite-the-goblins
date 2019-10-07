@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 1881650869711226084}
   - component: {fileID: 7277049903438806660}
   - component: {fileID: 265198731437140664}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MobileCharacter
   m_TagString: PlayerCharacter
   m_Icon: {fileID: 0}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRotate: 1
   maxRotationSpeed: 360
+  moveAllDirectionsForTest: 0
 --- !u!114 &1881650869711226093
 MonoBehaviour:
   m_ObjectHideFlags: 0
