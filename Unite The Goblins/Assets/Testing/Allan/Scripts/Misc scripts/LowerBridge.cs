@@ -21,7 +21,7 @@ public class LowerBridge : MonoBehaviour
             gameObject.transform.Rotate(Time.deltaTime * rotateSpeed, 0, 0);
         }
 
-        Debug.Log(gameObject.transform.rotation.eulerAngles.x);
+        //Debug.Log(gameObject.transform.rotation.eulerAngles.x);
     }
 
     void IsActive()
