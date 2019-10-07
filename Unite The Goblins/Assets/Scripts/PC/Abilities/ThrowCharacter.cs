@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ThrowCharacter : MonoBehaviour
 {
-    public GameObject tinkererCharacter;
-
     private bool isLifted;
     private GameObject target;
 
@@ -19,27 +17,42 @@ public class ThrowCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && target != null && !isLifted && tinkererCharacter.GetComponent<Shapeshift>().abilityUsed)
+        if (Input.GetKeyDown(KeyCode.Z) && target != null/* && !isLifted */&& target.GetComponent<Shapeshift>().abilityUsed)
         {
-            isLifted = true;
-            target.transform.gameObject.transform.parent = transform;
-        }
-        else if (Input.GetKeyDown(KeyCode.Z) && isLifted)
-        {
+            //Debug.Log("lifting");
+            //isLifted = true;
+            //target.transform.position = transform.position;
+
             Vector3 shootDirection;
             shootDirection = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
             shootDirection.Normalize();
 
-            target.GetComponent<CharacterMotor>().SetVelocity(new Vector3(shootDirection.x * ThrowForce, shootDirection.y * ThrowForce, 0));
+            target.GetComponent<CharacterMotor>().SetVelocity(new Vector3(0, shootDirection.y * ThrowForce, shootDirection.x * ThrowForce));
 
-            isLifted = false;
-            target.gameObject.transform.parent = null;
-            target = null;
         }
+        //else if (Input.GetKeyDown(KeyCode.Z) && isLifted)
+        //{
+        //    Debug.Log("throwing");
+        //    Vector3 shootDirection;
+        //    shootDirection = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        //    shootDirection.Normalize();
+
+        //    target.GetComponent<CharacterMotor>().SetVelocity(new Vector3(0, shootDirection.y * ThrowForce, shootDirection.x * ThrowForce));
+
+        //    isLifted = false;
+        //    target.gameObject.transform.parent = null;
+        //    target = null;
+        //}
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        target = other.gameObject;
+        if (other.tag == "PlayerCharacter" && other.GetComponent<Shapeshift>() != null)
+            target = other.gameObject;
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "PlayerCharacter" && other.GetComponent<Shapeshift>() != null)
+            target = null;
     }
 }
