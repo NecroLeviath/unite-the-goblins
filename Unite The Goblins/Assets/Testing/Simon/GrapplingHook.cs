@@ -5,8 +5,8 @@ using UnityEngine;
 public class GrapplingHook : MonoBehaviour
 {
 	public float maxDistance = 10;
-	public GameObject rope;
 	public float velocity = 30;
+	GameObject rope;
 	LineRenderer lr;
 	GameObject target;
 	bool isCeilingHook;
@@ -18,7 +18,8 @@ public class GrapplingHook : MonoBehaviour
 
 	void Start()
 	{
-        lr = new LineRenderer();
+		rope = CreateRope();
+		lr = rope.GetComponent<LineRenderer>();
 		cm = GetComponent<CharacterMotor>();
 	}
 
@@ -46,11 +47,11 @@ public class GrapplingHook : MonoBehaviour
 			{
 				waitOneFrame = true;
 				cm.enabled = true;
-				if (isCeilingHook) cm.SetVelocity(new Vector3(outVelocity, 0, 0));
+				if (isCeilingHook) cm.SetVelocity(new Vector3(0, 0, outVelocity));
 				attached = false;
 			}
 		}
-		else if (Physics.Raycast(transform.position, mouseDir, out RaycastHit hit, maxDistance))	// See if the player is targeting a hook
+		else if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), mouseDir, out RaycastHit hit, maxDistance))	// See if the player is targeting a hook
 		{
 			if (hit.collider.CompareTag("LedgeHook"))
 			{
@@ -83,19 +84,36 @@ public class GrapplingHook : MonoBehaviour
 	Vector3 GetMouseDirection()
 	{
 		var mousePos = Input.mousePosition;
-		mousePos.x = -10;
+		mousePos.z = 10;
 		mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-		var playerPos = transform.position;
+		var playerPos = transform.position + new Vector3(0, 1f, 0);
 		return (mousePos - playerPos).normalized;
 	}
 
 	float GetOutVelocity(Vector3 playerPosition, Vector3 hookPosition)
 	{
-		var d = (hookPosition.x - playerPosition.x) / 2;	// Distance between hook and endpoint
+		var d = hookPosition.z - playerPosition.z;	// Distance between hook and endpoint
 		var h = playerPosition.y - hookPosition.y;      // Distance between hook and ground
 		var a = -cm.movement.gravity;   // Gravity
-		var dir = d / Mathf.Abs(d);	// Direction
-		var v = (d - ( h * dir)) / Mathf.Sqrt(2 * h / a);  // Horizontal velocity
+		//var dir = d / Mathf.Abs(d);
+		var v = d / Mathf.Sqrt(2 * h / a);  // Horizontal velocity
+		//var v = (d - ( h * dir)) / Mathf.Sqrt(2 * h / a);  // Horizontal velocity
 		return v;
+	}
+
+	GameObject CreateRope()
+	{
+		var rope = new GameObject("Rope");
+		LineRenderer lineRenderer = rope.AddComponent<LineRenderer>();
+
+		lineRenderer.startColor = Color.white;
+		lineRenderer.endColor = Color.white;
+		//lineRenderer.material = new Material(Shader.Find("Particles/Additive"));
+		lineRenderer.startWidth = 0.1f;
+		lineRenderer.endWidth = 0.1f;
+		lineRenderer.SetPosition(0, Vector3.zero);
+		lineRenderer.SetPosition(1, Vector3.zero);
+
+		return rope;
 	}
 }
