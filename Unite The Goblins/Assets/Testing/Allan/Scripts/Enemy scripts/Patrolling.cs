@@ -36,7 +36,7 @@ public class Patrolling : MonoBehaviour
         if (foundPlayer && target != null)
         {
             Vector3 playerPos = transform.position;
-            playerPos.x = target.transform.position.x;
+            playerPos.z = target.transform.position.z;
             transform.position = Vector3.MoveTowards(transform.position, playerPos, step);
         }
 

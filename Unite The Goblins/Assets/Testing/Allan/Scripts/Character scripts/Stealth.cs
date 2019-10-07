@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Stealth : MonoBehaviour
 {
-    Renderer rend;
+    //Renderer rend;
     Color color;
     PlayerSync ps;
     bool abilityUsed;
@@ -12,8 +12,8 @@ public class Stealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rend =  gameObject.GetComponentInChildren<Renderer>();
-        color = rend.material.color;
+        //rend =  gameObject.GetComponentInChildren<Renderer>();
+        //color = rend.material.color;
         ps = gameObject.transform.GetComponent<PlayerSync>();
         abilityUsed = false;
     }
@@ -26,8 +26,8 @@ public class Stealth : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("PS4_Triangle"))
             {
                 gameObject.tag = "Stealth";
-                color.a = 0.2f;
-                rend.material.color = color;
+                //color.a = 0.2f;
+                //rend.material.color = color;
                 gameObject.transform.SendMessage("AbilityIsUsed", true);
                 abilityUsed = true;
             }
@@ -37,12 +37,14 @@ public class Stealth : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("PS4_Triangle"))
             {
                 gameObject.tag = "PlayerCharacter";
-                color.a = 1.0f;
-                rend.material.color = color;
+                //color.a = 1.0f;
+                //rend.material.color = color;
                 gameObject.transform.SendMessage("AbilityIsUsed", false);
                 abilityUsed = false;
             }
         }
+
+        //Debug.Log(abilityUsed);
 
         //if (Input.GetKey(KeyCode.Joystick1Button3))
         //{

@@ -17,8 +17,8 @@ public class Activate : MonoBehaviour
         text = new GameObject();
         text.transform.parent = gameObject.transform;
         text.transform.position = gameObject.transform.position;
-        text.transform.Translate(-3, 0, 6);
-        text.transform.Rotate(0, 0, 0);
+        text.transform.Translate(-3, 4, -4);
+        text.transform.Rotate(0, 270, 0);
         text.transform.localScale -= new Vector3(0.8f, 0.8f, 0.8f);
         TextMesh t = text.AddComponent<TextMesh>();
         t.text = "Press E or Square to activate button";
