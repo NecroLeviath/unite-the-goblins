@@ -50,7 +50,7 @@ public class MovingPlatformPoints : MonoBehaviour
             {
                 return;
             }
-            transform.position = points[destPoint].position;
+            //transform.position = points[destPoint].position;
             destPoint = (destPoint + 1) % points.Length;
             countDown = delay;
         }
@@ -58,7 +58,7 @@ public class MovingPlatformPoints : MonoBehaviour
 
     void OnCollisionStay(Collision col)
     {
-        if (col.gameObject.tag == "PlayerCharacter" || col.gameObject.tag == "Box")
+        if (col.gameObject.tag == "FollowPlatformObject")
         {
             col.transform.parent = transform;
         }
@@ -66,7 +66,7 @@ public class MovingPlatformPoints : MonoBehaviour
 
     void OnCollisionExit(Collision col)
     {
-        if (col.gameObject.tag == "PlayerCharacter" || col.gameObject.tag == "Box")
+        if (col.gameObject.tag == "FollowPlatformObject")
         {
             col.transform.parent = null;
         }
