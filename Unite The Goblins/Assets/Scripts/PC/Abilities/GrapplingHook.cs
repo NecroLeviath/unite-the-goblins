@@ -26,6 +26,7 @@ public class GrapplingHook : MonoBehaviour
 	void Update()
 	{
 		var mouseDir = GetMouseDirection();
+		Debug.DrawRay(transform.position, mouseDir * 10);	// Debug
 		
 		if (attached)
 		{
@@ -84,7 +85,7 @@ public class GrapplingHook : MonoBehaviour
 	Vector3 GetMouseDirection()
 	{
 		var mousePos = Input.mousePosition;
-		mousePos.z = 10;
+		mousePos.z = 11;
 		mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 		var playerPos = transform.position + new Vector3(0, 1f, 0);
 		return (mousePos - playerPos).normalized;
