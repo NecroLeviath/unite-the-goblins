@@ -45,7 +45,7 @@ public class LiftPullPushObject : MonoBehaviour
                     target.gameObject.GetComponent<Rigidbody>().isKinematic = false;
                     target.gameObject.GetComponent<Rigidbody>().useGravity = true;
                     target.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    target.transform.Translate(0, 0, target.transform.localScale.z * 4f);
+                    target.transform.Translate(0, 0, target.transform.localScale.z * 1);
                     target = null;
                 }
                 else if (!objectLifted && !pushing && pushable)
