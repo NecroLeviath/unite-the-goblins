@@ -63,7 +63,7 @@ public class LiftPullPushObject : MonoBehaviour
             {
                 Vector3 directionVector;
                 directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
-                target.transform.Translate((strength * directionVector.x), 0, 0);
+                target.transform.Translate(0, 0, (strength * directionVector.x));
             }
         }
     }
@@ -91,6 +91,7 @@ public class LiftPullPushObject : MonoBehaviour
             target = null;
             liftable = false;
             pushable = false;
+            pushing = false;
         }
     }
 }
