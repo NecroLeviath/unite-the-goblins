@@ -12,6 +12,7 @@ public class Scream : MonoBehaviour
 	void Start()
 	{
 		enemies = new List<GameObject>(GameObject.FindGameObjectsWithTag("Enemy"));
+		affectedEnemies = new List<GameObject>();
 	}
 
 	void Update()
@@ -26,6 +27,7 @@ public class Scream : MonoBehaviour
 					affectedEnemies.Add(e);
 				}
 			}
+			active = true;
 			// Shut down player movement?
 		}
 		else if (Input.GetKeyDown(KeyCode.Q) && active)	// Removes all enemies from the affected list toggles off their "afraid" status
@@ -35,6 +37,7 @@ public class Scream : MonoBehaviour
 				e.SendMessage("ToggleFear");
 			}
 			affectedEnemies.Clear();
+			active = false;
 		}
 
 		if (active)
@@ -47,28 +50,12 @@ public class Scream : MonoBehaviour
 					e.SendMessage("ToggleFear");
 					affectedEnemies.Remove(e);
 				}
-				else if (distance <= radius)	// If an unaffected enemy enters the radius they become afraid
+				else if (!affectedEnemies.Contains(e) && distance <= radius)	// If an unaffected enemy enters the radius they become afraid
 				{
 					e.SendMessage("ToggleFear");
 					affectedEnemies.Add(e);
 				}
 			}
-		}
-
-		#region Debug
-		Gizmos.DrawSphere(transform.position, radius);
-		#endregion
-	}
-
-	void EnemyClass()	// The code in this function should be in an enemy class
-	{
-		bool afraid = false;
-
-		// If the enemy is afraid they should move away from the player
-
-		/*public*/ void ToggleFear()	// Send the position of the player aswell?
-		{
-			afraid = !afraid;
 		}
 	}
 }

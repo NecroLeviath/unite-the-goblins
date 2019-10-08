@@ -4,87 +4,104 @@ using UnityEngine;
 
 public class Patrolling : MonoBehaviour
 {
-    GameObject target;
-    bool foundPlayer;
-    public float speed;
+	GameObject target;
+	bool foundPlayer;
+	public float speed;
 
-    public Transform[] points;
-    int destPoint;
-    public float allowence = 0.1f;
-    float countDown;
-    public float delay = 3.2f;
+	public Transform[] points;
+	int destPoint;
+	public float allowence = 0.1f;
+	float countDown;
+	public float delay = 3.2f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        target = null;
-        foundPlayer = false;
-        countDown = 0;
-        UpdateTarget();
-    }
+	bool afraid = false;	// For Scream ability
 
-    // Update is called once per frame
-    void Update()
-    {
-        float step = speed * Time.deltaTime;
-        if (target && target.tag == "Stealth")
-        {
-            target = null;
-            foundPlayer = false;
-        }
+	// Start is called before the first frame update
+	void Start()
+	{
+		target = null;
+		foundPlayer = false;
+		countDown = 0;
+		UpdateTarget();
+	}
 
-        if (foundPlayer && target != null)
-        {
-            Vector3 playerPos = transform.position;
-            playerPos.z = target.transform.position.z;
-            transform.position = Vector3.MoveTowards(transform.position, playerPos, step);
-        }
+	// Update is called once per frame
+	void Update()
+	{
+		float step = speed * Time.deltaTime;
+		if (target && target.tag == "Stealth")
+		{
+			target = null;
+			foundPlayer = false;
+		}
 
-        if (!foundPlayer && target == null)
-        {
-            Vector3 thisPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+		if (afraid && target != null)	// For Scream ability
+		{
+			Vector3 playerPos = transform.position;
+			playerPos.z = target.transform.position.z;
+			var targetPos = transform.position + transform.position - playerPos;
+			transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
+		}
+		else
+		{
+			if (foundPlayer && target != null)
+			{
+				Vector3 playerPos = transform.position;
+				playerPos.z = target.transform.position.z;
+				transform.position = Vector3.MoveTowards(transform.position, playerPos, step);
+			}
 
-            // Distance between current position and next position < allowence
-            if (Vector3.Distance(thisPos, points[destPoint].position) < allowence)
-            {
-                UpdateTarget();
-            }
+			if (!foundPlayer && target == null)
+			{
+				Vector3 thisPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-            transform.position = Vector3.MoveTowards(transform.position, points[destPoint].position, step);
-        }
-    }
+				// Distance between current position and next position < allowence
+				if (Vector3.Distance(thisPos, points[destPoint].position) < allowence)
+				{
+					UpdateTarget();
+				}
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "PlayerCharacter")
-        {
-            target = other.gameObject;
-            foundPlayer = true;
-        }
-    }
+				transform.position = Vector3.MoveTowards(transform.position, points[destPoint].position, step);
+			}
+		}
+	}
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "PlayerCharacter" || other.gameObject.tag == "Stealth")
-        {
-            target = null;
-            foundPlayer = false;
-        }
-    }
+	private void OnTriggerStay(Collider other)
+	{
+		if (other.gameObject.tag == "PlayerCharacter")
+		{
+			target = other.gameObject;
+			foundPlayer = true;
+		}
+	}
 
-    void UpdateTarget()
-    {
-        countDown -= Time.deltaTime;
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.gameObject.tag == "PlayerCharacter" || other.gameObject.tag == "Stealth")
+		{
+			target = null;
+			foundPlayer = false;
+		}
+	}
 
-        if (countDown < 0)
-        {
-            if (points.Length == 0)
-            {
-                return;
-            }
-            //transform.position = points[destPoint].position;
-            destPoint = (destPoint + 1) % points.Length;
-            countDown = delay;
-        }
-    }
+	void UpdateTarget()
+	{
+		countDown -= Time.deltaTime;
+
+		if (countDown < 0)
+		{
+			if (points.Length == 0)
+			{
+				return;
+			}
+			//transform.position = points[destPoint].position;
+			destPoint = (destPoint + 1) % points.Length;
+			countDown = delay;
+		}
+	}
+
+	public void ToggleFear()	// For Scream ability
+	{
+		afraid = !afraid;
+	}
 }
