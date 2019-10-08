@@ -16,6 +16,7 @@ TagManager:
   - LedgeHook
   - CeilingHook
   - FollowPlatformObject
+  - Enemy
   layers:
   - Default
   - TransparentFX
