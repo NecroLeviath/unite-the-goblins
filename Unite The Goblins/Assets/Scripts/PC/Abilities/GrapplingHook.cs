@@ -26,7 +26,7 @@ public class GrapplingHook : MonoBehaviour
 	void Update()
 	{
 		var mouseDir = GetMouseDirection();
-		Debug.DrawRay(transform.position, mouseDir * 10);	// Debug
+		Debug.DrawRay(transform.position + new Vector3(0, 1f, 0), mouseDir * 10);	// Debug
 		
 		if (attached)
 		{
@@ -48,6 +48,7 @@ public class GrapplingHook : MonoBehaviour
 			{
 				waitOneFrame = true;
 				cm.enabled = true;
+				cm.SetVelocity(Vector3.zero);
 				if (isCeilingHook) cm.SetVelocity(new Vector3(0, 0, outVelocity));
 				attached = false;
 			}
