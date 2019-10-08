@@ -5,30 +5,49 @@ using UnityEngine;
 public class Falldown : MonoBehaviour
 {
     bool isActive = false;
-    bool hasKilledPlayer = false;
+    //bool hasKilledPlayer = false;
     Rigidbody rb;
+    public bool isTriggerActivated;
+    public float fallDelay;
+    float fallTimer;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        fallTimer = fallDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActive)
+        if (isActive && !isTriggerActivated)
         {
             rb.useGravity = true;
         }
+        else if (isActive && isTriggerActivated)
+        {
+            fallTimer -= Time.deltaTime;
+            if (fallTimer < 0)
+            {
+                rb.useGravity = true;
+                fallTimer = fallDelay;
+            }
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!hasKilledPlayer && collision.gameObject.tag == "PlayerCharacter")
+        if (isTriggerActivated && other.gameObject.tag == "PlayerCharacter")
         {
-            collision.gameObject.SendMessage("Death");
+            IsActive();
         }
-        hasKilledPlayer = true;
+
+        //if (!hasKilledPlayer && collision.gameObject.tag == "PlayerCharacter")
+        //{
+        //    collision.gameObject.SendMessage("Death");
+        //}
+        //hasKilledPlayer = true;
     }
 
     void IsActive()
