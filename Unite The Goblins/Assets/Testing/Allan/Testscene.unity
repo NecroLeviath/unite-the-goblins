@@ -1308,6 +1308,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7178344987403875894, guid: 774afa73ddc904a4d9d29a600aca6a66,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178344987403875894, guid: 774afa73ddc904a4d9d29a600aca6a66,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178344987327702822, guid: 774afa73ddc904a4d9d29a600aca6a66,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774afa73ddc904a4d9d29a600aca6a66, type: 3}
 --- !u!1001 &98762240747831226

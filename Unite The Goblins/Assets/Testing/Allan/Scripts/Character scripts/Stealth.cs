@@ -8,6 +8,7 @@ public class Stealth : MonoBehaviour
     Color color;
     PlayerSync ps;
     bool abilityUsed;
+    GameObject[] enemies;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class Stealth : MonoBehaviour
         //color = rend.material.color;
         ps = gameObject.transform.GetComponent<PlayerSync>();
         abilityUsed = false;
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -30,6 +32,10 @@ public class Stealth : MonoBehaviour
                 //rend.material.color = color;
                 gameObject.transform.SendMessage("AbilityIsUsed", true);
                 abilityUsed = true;
+                foreach (GameObject enemy in enemies)
+                {
+                    Physics.IgnoreCollision(enemy.GetComponent<Collider>(), GetComponent<Collider>());
+                }
             }
         }
         else if (gameObject.tag == "Stealth" && ps.ReturnStatus() == true && abilityUsed)
