@@ -35,7 +35,7 @@ public class LiftPullPushObject : MonoBehaviour
                     target.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                     target.gameObject.GetComponent<Rigidbody>().useGravity = false;
                     target.transform.position = transform.position;
-                    target.transform.Translate(0, target.transform.localScale.y * 1.5f, 0);
+                    target.transform.Translate(0, target.transform.localScale.y * 1.4f, 0);
                     target.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
                 }
                 else if (objectLifted && liftable)
@@ -45,7 +45,7 @@ public class LiftPullPushObject : MonoBehaviour
                     target.gameObject.GetComponent<Rigidbody>().isKinematic = false;
                     target.gameObject.GetComponent<Rigidbody>().useGravity = true;
                     target.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                    target.transform.Translate(0, 0, target.transform.localScale.z * 1);
+                    target.transform.Translate(0, 0, target.transform.localScale.z * 1f);
                     target = null;
                 }
                 else if (!objectLifted && !pushing && pushable)
