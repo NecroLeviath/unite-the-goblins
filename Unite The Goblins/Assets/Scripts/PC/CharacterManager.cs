@@ -17,6 +17,7 @@ public class CharacterManager : MonoBehaviour
         Physics.IgnoreCollision(players[0].GetComponent<Collider>(), players[1].GetComponent<Collider>());
         Physics.IgnoreCollision(players[0].GetComponent<Collider>(), players[2].GetComponent<Collider>());
         Physics.IgnoreCollision(players[1].GetComponent<Collider>(), players[2].GetComponent<Collider>());
+
     }
 
     private void SetCurrentActiveCharacter(GameObject player)
