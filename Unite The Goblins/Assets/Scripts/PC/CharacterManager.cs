@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -48,5 +49,11 @@ public class CharacterManager : MonoBehaviour
         {
             SetCurrentActiveCharacter(players[2]);
         }
+    }
+
+    public void Die()
+    {
+        ChaseCam.gameObject.SetActive(true);
+        SceneManager.LoadScene("DeathScene", LoadSceneMode.Additive);
     }
 }

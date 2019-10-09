@@ -20,7 +20,7 @@ public class SpiketrapScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerCharacter")
         {
-            collision.gameObject.SendMessage("Death");
+            GameObject.Find("Character Manager").GetComponent<CharacterManager>().Die();
         }
     }
 }
