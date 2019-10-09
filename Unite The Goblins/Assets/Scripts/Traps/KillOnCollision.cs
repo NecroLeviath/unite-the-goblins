@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
+public class KillOnCollision : MonoBehaviour
 {
-    public Camera c;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +16,11 @@ public class CharacterStats : MonoBehaviour
         
     }
 
-    void Death()
+    private void OnTriggerEnter(Collider other)
     {
-        transform.gameObject.SetActive(false);
-        c.gameObject.SetActive(true);
+        if (other.tag == "PlayerCharacter")
+        {
+            GameObject.Find("Character Manager").GetComponent<CharacterManager>().Die();
+        }
     }
 }
