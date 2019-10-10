@@ -34,7 +34,7 @@ public class Stealth : MonoBehaviour
                 abilityUsed = true;
                 foreach (GameObject enemy in enemies)
                 {
-                    Physics.IgnoreCollision(enemy.GetComponent<Collider>(), GetComponent<Collider>());
+                    Physics.IgnoreCollision(enemy.GetComponent<CapsuleCollider>(), GetComponent<Collider>());
                 }
             }
         }
