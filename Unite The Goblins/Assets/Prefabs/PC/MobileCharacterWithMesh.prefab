@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8245957222673279120}
   - component: {fileID: 6521758689430295413}
   - component: {fileID: 1271673529}
+  - component: {fileID: 8908238707576770150}
   m_Layer: 8
   m_Name: MobileCharacterWithMesh
   m_TagString: PlayerCharacter
@@ -203,6 +204,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a9d2a5e71fea54ca64b5f0736df24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8908238707576770150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843291556516199007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174c627da54d94146b7f2f1a03cb0a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1720923477041099688

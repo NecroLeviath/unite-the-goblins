@@ -38,10 +38,10 @@ public class Falldown : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isTriggerActivated && other.gameObject.tag == "PlayerCharacter")
-        {
-            IsActive();
-        }
+        //if (isTriggerActivated && other.gameObject.tag == "PlayerCharacter")
+        //{
+        //    IsActive();
+        //}
 
         //if (!hasKilledPlayer && collision.gameObject.tag == "PlayerCharacter")
         //{

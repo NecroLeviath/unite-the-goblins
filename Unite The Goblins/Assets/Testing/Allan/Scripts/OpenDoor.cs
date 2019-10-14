@@ -7,6 +7,7 @@ public class OpenDoor : MonoBehaviour
     public int ID;
     GameObject target;
     bool collisionDetected;
+    public bool needsKey;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,11 @@ public class OpenDoor : MonoBehaviour
     public void ActivateFunction()
     {
         Inventory inv = target.GetComponent<Inventory>();
-        if (inv.ReturnKey(ID))
+        if (inv.ReturnKey(ID) && needsKey)
+        {
+            gameObject.SetActive(false);
+        }
+        else if (!needsKey)
         {
             gameObject.SetActive(false);
         }
