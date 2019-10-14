@@ -48,7 +48,7 @@ MonoBehaviour:
   Templates:
   - {fileID: -927199367670048503, guid: ec535b3644d1b5a41981e546a49efa27, type: 3}
   Materials:
-  - {fileID: 2100000, guid: bf023ec8b4c32e14eba8a195b8705808, type: 2}
+  - {fileID: 2100000, guid: e92d92ddc763a5f44a6d65d74ed4a0e5, type: 2}
   GenerateCollider: 0
   ColliderOffsets: {x: 0, y: 0, z: 0}
   Z: 1
