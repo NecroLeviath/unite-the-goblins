@@ -8,11 +8,13 @@ public class CharacterManager : MonoBehaviour
     [HideInInspector]
     public List<GameObject> players;
     public Camera ChaseCam;
+    int currentCharacter;
     
     void Start()
     {
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("PlayerCharacter"));
         SetCurrentActiveCharacter(players[0]);
+        currentCharacter = 0;
 
         Physics.IgnoreCollision(players[0].GetComponent<Collider>(), players[1].GetComponent<Collider>());
         Physics.IgnoreCollision(players[0].GetComponent<Collider>(), players[2].GetComponent<Collider>());
@@ -38,16 +40,39 @@ public class CharacterManager : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             SetCurrentActiveCharacter(players[0]);
+            currentCharacter = 0;
         }
 
         if (Input.GetKeyDown("2"))
         {
             SetCurrentActiveCharacter(players[1]);
+            currentCharacter = 1;
         }
 
         if (Input.GetKeyDown("3"))
         {
             SetCurrentActiveCharacter(players[2]);
+            currentCharacter = 2;
+        }
+    }
+
+    public GameObject ReturnCurrentCharacter()
+    {
+        if (currentCharacter == 0)
+        {
+            return players[0];
+        }
+        else if (currentCharacter == 1)
+        {
+            return players[1];
+        }
+        else if (currentCharacter == 2)
+        {
+            return players[2];
+        }
+        else
+        {
+            return null;
         }
     }
 
