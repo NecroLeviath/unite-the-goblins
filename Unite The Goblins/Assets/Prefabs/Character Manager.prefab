@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936701622208249422}
   - component: {fileID: 8821959563103956275}
+  - component: {fileID: -2077037940201986125}
   m_Layer: 0
   m_Name: Character Manager
   m_TagString: Untagged
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   ChaseCam: {fileID: 0}
+--- !u!114 &-2077037940201986125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980417454650932094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9057d414c35e09e41bf658485dfb7d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    bool abilityInUse;
-    CharacterManager cm;
     GameObject g;
 
     // Start is called before the first frame update
     void Start()
     {
-        abilityInUse = false;
-        cm = transform.GetComponent<CharacterManager>();
+        g = null;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (g == null)
+        if (g)
         {
-            g = cm.ReturnCurrentCharacter();
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("PS4_O"))
-        {
-            g.SendMessage("Message", "UseShapeshift");
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("PS4_O"))
+            {
+                g.SendMessage("Message", "UseShapeshift");
+            }
+            else if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("PS4_Triangle"))
+            {
+                g.SendMessage("Message", "UseStealth");
+                //g.SendMessage("Message", "Jumplikeafrog");
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("PS4_R2"))
+            {
+                g.SendMessage("Message", "UseRun");
+            }
         }
     }
 
-    public void AbilityIsUsed(bool b)
+    public void UpdateCurrentCharacter(GameObject character)
     {
-        abilityInUse = b;
-    }
-
-    public bool ReturnStatus()
-    {
-        return abilityInUse;
+        g = character;
     }
 }

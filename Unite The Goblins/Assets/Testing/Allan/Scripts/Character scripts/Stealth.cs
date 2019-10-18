@@ -8,6 +8,7 @@ public class Stealth : MonoBehaviour
     Color color;
     PlayerSync ps;
     bool abilityUsed;
+    bool useAbility;
     GameObject[] enemies;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class Stealth : MonoBehaviour
         //color = rend.material.color;
         ps = gameObject.transform.GetComponent<PlayerSync>();
         abilityUsed = false;
+        useAbility = false;
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
@@ -25,7 +27,8 @@ public class Stealth : MonoBehaviour
     {
         if (gameObject.tag == "PlayerCharacter" && ps.ReturnStatus() == false)
         {
-            if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("PS4_Triangle"))
+            if (useAbility)
+            //if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("PS4_Triangle"))
             {
                 gameObject.tag = "Stealth";
                 //color.a = 0.2f;
@@ -36,19 +39,23 @@ public class Stealth : MonoBehaviour
                 {
                     Physics.IgnoreCollision(enemy.GetComponent<CapsuleCollider>(), GetComponent<Collider>());
                 }
+                useAbility = false;
             }
         }
         else if (gameObject.tag == "Stealth" && ps.ReturnStatus() == true && abilityUsed)
         {
-            if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("PS4_Triangle"))
+            if (useAbility)
+            //if (Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown("PS4_Triangle"))
             {
                 gameObject.tag = "PlayerCharacter";
                 //color.a = 1.0f;
                 //rend.material.color = color;
                 gameObject.transform.SendMessage("AbilityIsUsed", false);
                 abilityUsed = false;
+                useAbility = false;
             }
         }
+        useAbility = false;
 
         //Debug.Log(abilityUsed);
 
@@ -56,5 +63,13 @@ public class Stealth : MonoBehaviour
         //{
         //    gameObject.tag = "Stealth";
         //}
+    }
+
+    public void Message(string text)
+    {
+        if (text == "UseStealth")
+        {
+            useAbility = true;
+        }
     }
 }
