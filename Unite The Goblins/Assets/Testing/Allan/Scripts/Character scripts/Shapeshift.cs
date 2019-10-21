@@ -14,7 +14,7 @@ public class Shapeshift : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ps = gameObject.GetComponentInParent<PlayerSync>();
+        ps = gameObject.transform.GetComponent<PlayerSync>();
         cm = gameObject.transform.GetComponent <CharacterMotor>();
         abilityUsed = false;
         useAbility = false;

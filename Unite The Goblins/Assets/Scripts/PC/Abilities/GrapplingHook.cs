@@ -15,13 +15,17 @@ public class GrapplingHook : MonoBehaviour
 	CharacterMotor cm;
 	bool waitOneFrame = true;
 	float outVelocity;
+    PlayerSync ps;
+    bool useAbility;
 
-	void Start()
+    void Start()
 	{
 		rope = CreateRope();
 		lr = rope.GetComponent<LineRenderer>();
 		cm = GetComponent<CharacterMotor>();
-	}
+        ps = gameObject.transform.GetComponent<PlayerSync>();
+        useAbility = false;
+    }
 
 	void Update()
 	{
@@ -51,8 +55,9 @@ public class GrapplingHook : MonoBehaviour
 				cm.SetVelocity(Vector3.zero);
 				if (isCeilingHook) cm.SetVelocity(new Vector3(0, 0, outVelocity));
 				attached = false;
-			}
-		}
+                transform.gameObject.SendMessage("AbilityIsUsed", false);
+            }
+        }
 		else if (Physics.Raycast(transform.position + new Vector3(0, 1f, 0), mouseDir, out RaycastHit hit, maxDistance))	// See if the player is targeting a hook
 		{
 			if (hit.collider.CompareTag("LedgeHook"))
@@ -73,15 +78,24 @@ public class GrapplingHook : MonoBehaviour
 			target = null;
 		}
 
-		if (target != null && !attached && Input.GetKeyDown(KeyCode.Mouse0) && target.transform.position.y > transform.position.y)
-		{
-			lr.SetPositions(new Vector3[] { transform.position, target.transform.position });   // Temp (Draw a rope between the player and the hook)
-			distance = Vector3.Distance(transform.position, target.transform.position);
-			cm.enabled = false;
-			if (isCeilingHook) outVelocity = GetOutVelocity(transform.position, target.transform.position);
-			attached = true;
-		}
-	}
+        if (ps.ReturnStatus() == false)
+        {
+            if (useAbility)
+            {
+                if (target != null && !attached /*&& Input.GetKeyDown(KeyCode.Mouse0)*/ && target.transform.position.y > transform.position.y)
+                {
+                    transform.gameObject.SendMessage("AbilityIsUsed", true);
+                    lr.SetPositions(new Vector3[] { transform.position, target.transform.position });   // Temp (Draw a rope between the player and the hook)
+                    distance = Vector3.Distance(transform.position, target.transform.position);
+                    cm.enabled = false;
+                    if (isCeilingHook) outVelocity = GetOutVelocity(transform.position, target.transform.position);
+                    attached = true;
+                    useAbility = false;
+                }
+            }
+        }
+        useAbility = false;
+    }
 
 	Vector3 GetMouseDirection()
 	{
@@ -118,4 +132,12 @@ public class GrapplingHook : MonoBehaviour
 
 		return rope;
 	}
+
+    public void Message(string text)
+    {
+        if (text == "UseGrapplinghook")
+        {
+            useAbility = true;
+        }
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSync : MonoBehaviour
 {
-    bool abilityInUse;
+    public bool abilityInUse;
 
     // Start is called before the first frame update
     void Start()
