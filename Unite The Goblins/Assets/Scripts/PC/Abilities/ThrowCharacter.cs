@@ -7,7 +7,6 @@ public class ThrowCharacter : MonoBehaviour
     private bool isLifted;
     private GameObject target;
     PlayerSync ps;
-    public bool abilityUsed;
     bool useAbility;
 
     public float ThrowForce = 25;
@@ -15,7 +14,6 @@ public class ThrowCharacter : MonoBehaviour
     void Start()
     {
         ps = gameObject.transform.GetComponent<PlayerSync>();
-        abilityUsed = false;
         useAbility = false;
     }
 
@@ -36,10 +34,8 @@ public class ThrowCharacter : MonoBehaviour
 
                 target.GetComponent<CharacterMotor>().SetVelocity(new Vector3(0, shootDirection.y * ThrowForce, shootDirection.x * ThrowForce));
 
-                abilityUsed = true;
                 useAbility = false;
                 transform.gameObject.SendMessage("AbilityIsUsed", false);
-                abilityUsed = false;
             }
             //else if (Input.GetKeyDown(KeyCode.Z) && isLifted)
             //{

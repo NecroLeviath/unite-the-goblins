@@ -8,19 +8,45 @@ public class Glider : MonoBehaviour
     private float standardFallspeed;
     public float glideFallSpeed;
     private bool isActive = false;
+    PlayerSync ps;
+    public bool abilityUsed;
+    bool useAbility;
 
     void Start()
     {
         cm = GetComponent<CharacterMotor>();
         standardFallspeed = cm.movement.maxFallSpeed;
+        ps = gameObject.transform.GetComponent<PlayerSync>();
+        abilityUsed = false;
+        useAbility = false;
     }
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.E) && !GetComponent<CharacterMotor>().grounded) || (Input.GetButtonDown("PS4_O") && !GetComponent<CharacterMotor>().grounded))
+        if (ps.ReturnStatus() == false)
         {
-            isActive = !isActive;
+            if (useAbility)
+            {
+                if ((/*Input.GetKeyDown(KeyCode.E) && !GetComponent<CharacterMotor>().grounded) || (Input.GetButtonDown("PS4_O") && */!GetComponent<CharacterMotor>().grounded))
+                {
+                    transform.gameObject.SendMessage("AbilityIsUsed", true);
+                    abilityUsed = true;
+                    useAbility = false;
+                    isActive = true;
+                }
+            }
         }
+        else if (ps.ReturnStatus() == true && abilityUsed)
+        {
+            if (useAbility)
+            {
+                transform.gameObject.SendMessage("AbilityIsUsed", false);
+                abilityUsed = false;
+                useAbility = false;
+                isActive = false;
+            }
+        }
+        useAbility = false;
 
         if (GetComponent<CharacterMotor>().grounded)
         {
@@ -34,6 +60,14 @@ public class Glider : MonoBehaviour
         else
         {
             GetComponent<CharacterMotor>().movement.maxFallSpeed = standardFallspeed;
+        }
+    }
+
+    public void Message(string text)
+    {
+        if (text == "UseGlider")
+        {
+            useAbility = true;
         }
     }
 }
