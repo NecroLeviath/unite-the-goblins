@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_New Shader Graph
+  m_Shader: {fileID: -6465566751694194690, guid: 2e29227f0f7d6694cb46b7532d5ef67f,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ParallaxOcclusionMapping_A33E2575_Heightmap_2:
+        m_Texture: {fileID: 2800000, guid: 5464fa0c167488947b856d6f972f4a6a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_47EB27CF_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 03bed5959d3843544a29ee9ba5b6c758, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_947C0EBB_Texture_1:
+        m_Texture: {fileID: 2800000, guid: ac62b2962f3213642b1719724105b899, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9B38BB39_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 62615cc9bab2fa44ab0d2562d89b0b22, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_CCAABB38_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 78330ea5f905ad64fb7ffbac3251521c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_EA20E00F_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 5b572ed3102a238469d7fdae1da0af2d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_F72C3BB4_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7e109fe5bd05b7e44b41e20976835ab7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
