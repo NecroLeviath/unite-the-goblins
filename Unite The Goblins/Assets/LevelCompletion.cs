@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelCompletion : MonoBehaviour
 {
-    public CharacterManager characterManager;
 
     private int numPlayersFinished = 0;
+
+    public int numPlayersNeededToFinish = 3;
 
     public string nextScene;
 
@@ -27,7 +28,7 @@ public class LevelCompletion : MonoBehaviour
             numPlayersFinished++;
         }
 
-        if (characterManager.players.Count == numPlayersFinished)
+        if (numPlayersNeededToFinish == numPlayersFinished)
         {
             SceneManager.LoadScene(nextScene);
         }
