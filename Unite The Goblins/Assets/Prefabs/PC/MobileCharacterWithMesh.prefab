@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed909628ee3f0cc4ebfd2f2414a01c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityInUse: 0
 --- !u!114 &1271673529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,11 +231,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mobile01@T-Pose
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 4fb91bd24b63b364dbaeb1ae50729bd0,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e61d6e4bd8700f04cb835c4638c8e4a5, type: 2}
     - target: {fileID: -4216859302048453862, guid: 4fb91bd24b63b364dbaeb1ae50729bd0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -290,6 +286,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 4fb91bd24b63b364dbaeb1ae50729bd0,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e61d6e4bd8700f04cb835c4638c8e4a5, type: 2}
     - target: {fileID: 439242457747655436, guid: 4fb91bd24b63b364dbaeb1ae50729bd0,
         type: 3}
       propertyPath: m_LocalRotation.x
