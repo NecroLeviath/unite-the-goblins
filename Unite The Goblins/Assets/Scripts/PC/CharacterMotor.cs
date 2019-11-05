@@ -328,6 +328,12 @@ public class CharacterMotor : MonoBehaviour
         // We were not grounded but just landed on something
         else if(!grounded && IsGroundedTest())
         {
+            if (velocity.y <= -20.0f)
+            {
+                GetComponent<Health>().TakeDamage();
+            }
+
+
             grounded = true;
             jumping.jumping = false;
             SubtractNewPlatformVelocity();
