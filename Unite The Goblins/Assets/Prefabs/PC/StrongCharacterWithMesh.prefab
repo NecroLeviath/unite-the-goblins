@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -6406068542236751}
   - component: {fileID: 1195028032}
   - component: {fileID: 4177862850904436971}
+  - component: {fileID: 67346608984010333}
   m_Layer: 8
   m_Name: StrongCharacterWithMesh
   m_TagString: PlayerCharacter
@@ -182,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df3d5afdd7e0dc4fbef9be4baedc27c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityUsed: 0
 --- !u!114 &-6406068542236751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +225,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed909628ee3f0cc4ebfd2f2414a01c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityInUse: 0
+--- !u!114 &67346608984010333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5617220062776240828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e24d69b2ea5b74080e1c8c915df6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  immuneTimeInSec: 2
+  sprite: {fileID: 21300000, guid: 7d12f1000265b0142a06f7100073e602, type: 3}
 --- !u!1001 &5095270203391946356
 PrefabInstance:
   m_ObjectHideFlags: 0

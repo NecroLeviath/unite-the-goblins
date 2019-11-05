@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SpiketrapScript : MonoBehaviour
 {
+    public bool instantKill;
+
     // Start is called before the first frame update
+
     void Start()
     {
         
@@ -20,7 +23,14 @@ public class SpiketrapScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "PlayerCharacter")
         {
-            GameObject.Find("Character Manager").GetComponent<CharacterManager>().Die();
+            if (instantKill)
+            {
+                GameObject.Find("Character Manager").GetComponent<CharacterManager>().Die();
+            }
+            else
+            {
+                collision.gameObject.GetComponent<Health>().TakeDamage();
+            }
         }
     }
 }

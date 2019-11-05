@@ -36,6 +36,23 @@ public class CharacterManager : MonoBehaviour
 
         ChaseCam.GetComponent<SmoothCamera>().target = player.transform;
         player.GetComponent<PlatformInputController>().enabled = true;
+
+        GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Tinker Abilities").active = false;
+        GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Strong Abilities").active = false;
+        GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Mobile Abilities").active = false;
+
+        if (player.name == "TinkerCharacterWithMesh")
+        {
+            GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Tinker Abilities").active = true;
+        }
+        if (player.name == "StrongCharacterWithMesh")
+        {
+            GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Strong Abilities").active = true;
+        }
+        if (player.name == "MobileCharacterWithMesh")
+        {
+            GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Mobile Abilities").active = true;
+        }
     }
 
     void Update()

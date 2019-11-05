@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6783093508360805673}
   - component: {fileID: 574655228}
   - component: {fileID: -7128606856516556791}
+  - component: {fileID: 1337638775858509737}
   m_Layer: 8
   m_Name: TinkerCharacterWithMesh
   m_TagString: PlayerCharacter
@@ -226,6 +227,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityInUse: 0
+--- !u!114 &1337638775858509737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2915056412547531642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e24d69b2ea5b74080e1c8c915df6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  immuneTimeInSec: 2
+  hps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &2537227530858416050
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -37,6 +37,8 @@ public class ChasePlayer : MonoBehaviour
         {
             target = other.gameObject;
             foundPlayer = true;
+
+            Debug.Log("asdf");
         }
     }
 
