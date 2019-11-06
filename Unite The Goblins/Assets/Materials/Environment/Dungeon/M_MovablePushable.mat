@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_WoodBox
+  m_Name: M_MovablePushable
   m_Shader: {fileID: -6465566751694194690, guid: 2e29227f0f7d6694cb46b7532d5ef67f,
     type: 3}
   m_ShaderKeywords: 
