@@ -1,0 +1,412 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3373740963529917993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3373740963529917992}
+  m_Layer: 0
+  m_Name: CorridorTwo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3373740963529917992
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740963529917993}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3373740965114758923}
+  - {fileID: 3373740964465706823}
+  - {fileID: 3373740964734552465}
+  - {fileID: 3373740964104969675}
+  - {fileID: 3373740965126554979}
+  - {fileID: 3373740964122303392}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3373740964104969672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3373740964104969675}
+  - component: {fileID: 3373740964104969674}
+  m_Layer: 0
+  m_Name: P_Wall_Deco_Bottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3373740964104969675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964104969672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -9, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3373740963529917992}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3373740964104969674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964104969672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59da5079e09c6542adf99eabbf310ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Creates replicas. Specify the Template Game Object and it will be repeated
+    as instructed by the X and Y values, with collision.
+  Templates:
+  - {fileID: -927199367670048503, guid: d73907c3b12b7bd4fa0fc21eca433b49, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: e92d92ddc763a5f44a6d65d74ed4a0e5, type: 2}
+  GenerateCollider: 0
+  ColliderOffsets: {x: 0, y: 0, z: 0}
+  Z: 1
+  Y: 1
+--- !u!1 &3373740964122303393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3373740964122303392}
+  - component: {fileID: 3373740964122303394}
+  - component: {fileID: 3373740964122303395}
+  m_Layer: 0
+  m_Name: P_LevelBlock (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3373740964122303392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964122303393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3373740963529917992}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3373740964122303394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964122303393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59da5079e09c6542adf99eabbf310ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Creates replicas. Specify the Template Game Object and it will be repeated
+    as instructed by the X and Y values, with collision.
+  Templates:
+  - {fileID: -927199367670048503, guid: 40d60a9a90b154446a14d76c086008d0, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: 6810b08c156bc5c47939e11ec1f3f7f3, type: 2}
+  GenerateCollider: 1
+  ColliderOffsets: {x: 0, y: 0, z: 0}
+  Z: 1
+  Y: 1
+--- !u!65 &3373740964122303395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964122303393}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9999998, y: 3, z: 3}
+  m_Center: {x: 1.4999999, y: 1.5, z: 1.5}
+--- !u!1 &3373740964465706820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3373740964465706823}
+  - component: {fileID: 3373740964465706841}
+  - component: {fileID: 3373740964465706822}
+  m_Layer: 0
+  m_Name: P_LevelBlock
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3373740964465706823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964465706820}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -12, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3373740963529917992}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3373740964465706841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964465706820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59da5079e09c6542adf99eabbf310ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Creates replicas. Specify the Template Game Object and it will be repeated
+    as instructed by the X and Y values, with collision.
+  Templates:
+  - {fileID: -927199367670048503, guid: 40d60a9a90b154446a14d76c086008d0, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: 6810b08c156bc5c47939e11ec1f3f7f3, type: 2}
+  GenerateCollider: 1
+  ColliderOffsets: {x: 0, y: 0, z: 0}
+  Z: 1
+  Y: 1
+--- !u!65 &3373740964465706822
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964465706820}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9999998, y: 3, z: 3}
+  m_Center: {x: 1.4999999, y: 1.5, z: 1.5}
+--- !u!1 &3373740964734552478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3373740964734552465}
+  - component: {fileID: 3373740964734552467}
+  - component: {fileID: 3373740964734552464}
+  m_Layer: 0
+  m_Name: P_Pillar
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3373740964734552465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964734552478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -9, z: -18.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3373740963529917992}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3373740964734552467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964734552478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59da5079e09c6542adf99eabbf310ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Creates replicas. Specify the Template Game Object and it will be repeated
+    as instructed by the X and Y values, with collision.
+  Templates:
+  - {fileID: -927199367670048503, guid: 0c0cbe908597bd44481768532d7b610b, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: bf023ec8b4c32e14eba8a195b8705808, type: 2}
+  GenerateCollider: 1
+  ColliderOffsets: {x: -0.3499092, y: 0, z: -0.3499094}
+  Z: 1
+  Y: 2
+--- !u!65 &3373740964734552464
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740964734552478}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6998185, y: 6, z: 0.69981873}
+  m_Center: {x: 0.000000059604645, y: 3, z: -0.000000029802322}
+--- !u!1 &3373740965114758920
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3373740965114758923}
+  - component: {fileID: 3373740965114758925}
+  - component: {fileID: 3373740965114758922}
+  m_Layer: 0
+  m_Name: P_Floor
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3373740965114758923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740965114758920}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -9, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3373740963529917992}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3373740965114758925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740965114758920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59da5079e09c6542adf99eabbf310ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Creates replicas. Specify the Template Game Object and it will be repeated
+    as instructed by the X and Y values, with collision.
+  Templates:
+  - {fileID: -927199367670048503, guid: 645a7af44fd61e341a49455124ee7483, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: 474f5fec964527441873ada77bb8abf7, type: 2}
+  GenerateCollider: 1
+  ColliderOffsets: {x: 0, y: 0, z: 0}
+  Z: 1
+  Y: 1
+--- !u!65 &3373740965114758922
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740965114758920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0000005, y: 0.099999994, z: 3.0000002}
+  m_Center: {x: 1.5000002, y: 0.049999997, z: 1.5000001}
+--- !u!1 &3373740965126554976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3373740965126554979}
+  - component: {fileID: 3373740965126554978}
+  m_Layer: 0
+  m_Name: P_Wall_Deco_Top
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3373740965126554979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740965126554976}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3, y: -6, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3373740963529917992}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3373740965126554978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373740965126554976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59da5079e09c6542adf99eabbf310ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: Creates replicas. Specify the Template Game Object and it will be repeated
+    as instructed by the X and Y values, with collision.
+  Templates:
+  - {fileID: -927199367670048503, guid: ec535b3644d1b5a41981e546a49efa27, type: 3}
+  Materials:
+  - {fileID: 2100000, guid: e92d92ddc763a5f44a6d65d74ed4a0e5, type: 2}
+  GenerateCollider: 0
+  ColliderOffsets: {x: 0, y: 0, z: 0}
+  Z: 1
+  Y: 1
