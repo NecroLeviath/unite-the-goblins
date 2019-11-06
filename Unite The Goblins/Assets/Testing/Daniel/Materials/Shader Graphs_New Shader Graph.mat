@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Shader Graphs_New Shader Graph
-  m_Shader: {fileID: -6465566751694194690, guid: 2e29227f0f7d6694cb46b7532d5ef67f,
+  m_Shader: {fileID: -6465566751694194690, guid: b2452b9bcadd1e840b19c38fc4e7b8e2,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -22,32 +22,20 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _ParallaxOcclusionMapping_A33E2575_Heightmap_2:
-        m_Texture: {fileID: 2800000, guid: 5464fa0c167488947b856d6f972f4a6a, type: 3}
+    - _SampleTexture2D_64D47248_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 11fc93105f561664686b36eac6852382, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_47EB27CF_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 03bed5959d3843544a29ee9ba5b6c758, type: 3}
+    - _Triplanar_5068EB5E_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 855b1c6ec47e22f4aa629d5dbd2148cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_947C0EBB_Texture_1:
-        m_Texture: {fileID: 2800000, guid: ac62b2962f3213642b1719724105b899, type: 3}
+    - _Triplanar_719F6638_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 7f38ec5ecd0702240aedbf53c01c56ec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_9B38BB39_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 62615cc9bab2fa44ab0d2562d89b0b22, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_CCAABB38_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 78330ea5f905ad64fb7ffbac3251521c, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_EA20E00F_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 5b572ed3102a238469d7fdae1da0af2d, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_F72C3BB4_Texture_1:
-        m_Texture: {fileID: 2800000, guid: 7e109fe5bd05b7e44b41e20976835ab7, type: 3}
+    - _Triplanar_CBD14A0A_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 93e2f8278ae95484f99373da972c9ce0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
