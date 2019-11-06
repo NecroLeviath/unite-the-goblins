@@ -16,6 +16,7 @@ public class CharacterManager : MonoBehaviour
         controller = transform.GetComponent<PlayerController>();
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("PlayerCharacter"));
         SetCurrentActiveCharacter(players[0]);
+        CanvasUpdate(players[0]);
         currentCharacter = 0;
         controller.UpdateCurrentCharacter(ReturnCurrentCharacter());
 
@@ -36,22 +37,34 @@ public class CharacterManager : MonoBehaviour
 
         ChaseCam.GetComponent<SmoothCamera>().target = player.transform;
         player.GetComponent<PlatformInputController>().enabled = true;
+    }
 
-        GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Tinker Abilities").active = false;
-        GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Strong Abilities").active = false;
-        GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Mobile Abilities").active = false;
+    public void CanvasUpdate(GameObject player)
+    {
+        GameObject guiTinker = GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Tinker Abilities");
+        GameObject guiStrong = GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Strong Abilities");
+        GameObject guiMobile = GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Mobile Abilities");
 
         if (player.name == "TinkerCharacterWithMesh")
         {
-            GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Tinker Abilities").active = true;
+            if (guiTinker != null) // Bara en extra check ifall gui inte finns i en annan scen, annars fungerar ej charactermanager
+            {
+                guiTinker.SetActive(true);
+            }
         }
         if (player.name == "StrongCharacterWithMesh")
         {
-            GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Strong Abilities").active = true;
+            if (guiStrong != null)
+            {
+                guiStrong.SetActive(true);
+            }
         }
         if (player.name == "MobileCharacterWithMesh")
         {
-            GameObject.Find("/Gameplay-GUI Canvas/Ability-GUI/Mobile Abilities").active = true;
+            if (guiMobile != null)
+            {
+                guiMobile.SetActive(true);
+            }
         }
     }
 
@@ -60,6 +73,7 @@ public class CharacterManager : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {
             SetCurrentActiveCharacter(players[0]);
+            CanvasUpdate(players[0]);
             currentCharacter = 0;
             controller.UpdateCurrentCharacter(ReturnCurrentCharacter());
         }
@@ -67,6 +81,7 @@ public class CharacterManager : MonoBehaviour
         if (Input.GetKeyDown("2"))
         {
             SetCurrentActiveCharacter(players[1]);
+            CanvasUpdate(players[1]);
             currentCharacter = 1;
             controller.UpdateCurrentCharacter(ReturnCurrentCharacter());
         }
@@ -74,6 +89,7 @@ public class CharacterManager : MonoBehaviour
         if (Input.GetKeyDown("3"))
         {
             SetCurrentActiveCharacter(players[2]);
+            CanvasUpdate(players[2]);
             currentCharacter = 2;
             controller.UpdateCurrentCharacter(ReturnCurrentCharacter());
         }

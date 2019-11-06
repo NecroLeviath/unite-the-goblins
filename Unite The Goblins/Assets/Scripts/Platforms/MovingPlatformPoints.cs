@@ -9,9 +9,10 @@ public class MovingPlatformPoints : MonoBehaviour
     public float allowence = 0.1f;
     public float speed;
     float countDown;
-    float delay = 1f;
+    public float delay = 1f;
     GameObject target = null;
     public bool isActivatable = false;
+    public bool needsReactivation = false;
     bool isActive = false;
 
     // Use this for initialization
@@ -21,6 +22,10 @@ public class MovingPlatformPoints : MonoBehaviour
         countDown = 0;
         target = null;
         UpdateTarget();
+        if (!isActivatable)
+        {
+            needsReactivation = false;
+        }
     }
 
     // Update is called once per frame
@@ -42,17 +47,24 @@ public class MovingPlatformPoints : MonoBehaviour
 
     void UpdateTarget()
     {
-        countDown -= Time.deltaTime;
-
-        if (countDown < 0)
+        if (!needsReactivation)
         {
-            if (points.Length == 0)
+            countDown -= Time.deltaTime;
+            if (countDown < 0)
             {
-                return;
+                if (points.Length == 0)
+                {
+                    return;
+                }
+                //transform.position = points[destPoint].position;
+                destPoint = (destPoint + 1) % points.Length;
+                countDown = delay;
             }
-            //transform.position = points[destPoint].position;
+        }
+        else
+        {
             destPoint = (destPoint + 1) % points.Length;
-            countDown = delay;
+            isActive = false;
         }
     }
 

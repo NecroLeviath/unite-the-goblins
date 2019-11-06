@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -687,6 +687,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes (Non-moving)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}
@@ -2259,6 +2264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!4 &477385519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
@@ -2628,6 +2634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!4 &540355994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8294522661740927713, guid: a316168d355f0084bb2a82694796c2ab,
@@ -2824,6 +2831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!1001 &596416528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3186,6 +3194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!4 &663380937 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1356160196554345352, guid: 9e729e1cdd8c5fe47a19e786f9cf3f06,
@@ -3644,6 +3653,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 7178344987403875894, guid: 774afa73ddc904a4d9d29a600aca6a66,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 7178344987403875894, guid: 774afa73ddc904a4d9d29a600aca6a66,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 7178344987327702829, guid: 774afa73ddc904a4d9d29a600aca6a66,
         type: 3}
       propertyPath: m_IsTrigger
@@ -3679,16 +3698,6 @@ PrefabInstance:
       propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7178344987403875894, guid: 774afa73ddc904a4d9d29a600aca6a66,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -19.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 7178344987403875894, guid: 774afa73ddc904a4d9d29a600aca6a66,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 774afa73ddc904a4d9d29a600aca6a66, type: 3}
 --- !u!1001 &748155570
@@ -3703,18 +3712,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TinkerCharacterWithMesh
       objectReference: {fileID: 0}
-    - target: {fileID: 6783093508360805673, guid: f6af173b71b977543842c4e7c9681712,
-        type: 3}
-      propertyPath: explosivePrefab
-      value: 
-      objectReference: {fileID: 5252907559510853973, guid: ae255a4eb5867dc4ca9ac6fbef956c3d,
-        type: 3}
-    - target: {fileID: -4756677479227909440, guid: f6af173b71b977543842c4e7c9681712,
-        type: 3}
-      propertyPath: pebblePrefab
-      value: 
-      objectReference: {fileID: 2059467797747069277, guid: ad23328001fd64945933a98fea26bfbd,
-        type: 3}
     - target: {fileID: 2915056412547531641, guid: f6af173b71b977543842c4e7c9681712,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3769,6 +3766,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4756677479227909440, guid: f6af173b71b977543842c4e7c9681712,
+        type: 3}
+      propertyPath: pebblePrefab
+      value: 
+      objectReference: {fileID: 2059467797747069277, guid: ad23328001fd64945933a98fea26bfbd,
+        type: 3}
+    - target: {fileID: 6783093508360805673, guid: f6af173b71b977543842c4e7c9681712,
+        type: 3}
+      propertyPath: explosivePrefab
+      value: 
+      objectReference: {fileID: 5252907559510853973, guid: ae255a4eb5867dc4ca9ac6fbef956c3d,
+        type: 3}
+    - target: {fileID: 574655228, guid: f6af173b71b977543842c4e7c9681712, type: 3}
+      propertyPath: abilityUsed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1316382769613688637, guid: f6af173b71b977543842c4e7c9681712, type: 3}
@@ -4228,7 +4241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &841143639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4480,6 +4493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes (Non-moving) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}
@@ -4984,6 +5002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!1 &1017460406
 GameObject:
   m_ObjectHideFlags: 0
@@ -6253,16 +6272,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrongCharacterWithMesh
       objectReference: {fileID: 0}
-    - target: {fileID: -6406068542236751, guid: a17a0f47d19fec44cb09928400ec7897,
-        type: 3}
-      propertyPath: maxDistance
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: -6406068542236751, guid: a17a0f47d19fec44cb09928400ec7897,
-        type: 3}
-      propertyPath: velocity
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5617220062776240831, guid: a17a0f47d19fec44cb09928400ec7897,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6322,6 +6331,16 @@ PrefabInstance:
         type: 3}
       propertyPath: ThrowForce
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -6406068542236751, guid: a17a0f47d19fec44cb09928400ec7897,
+        type: 3}
+      propertyPath: maxDistance
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -6406068542236751, guid: a17a0f47d19fec44cb09928400ec7897,
+        type: 3}
+      propertyPath: velocity
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8630225755829413627, guid: a17a0f47d19fec44cb09928400ec7897, type: 3}
@@ -6445,6 +6464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!4 &1345547845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8294522661740927713, guid: a316168d355f0084bb2a82694796c2ab,
@@ -6858,6 +6878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!1 &1534291421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4992039744271034610, guid: a316168d355f0084bb2a82694796c2ab,
@@ -6876,6 +6897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1741d87f6e3078e42bed0e58d193e645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instantKill: 0
 --- !u!1 &1534363779
 GameObject:
   m_ObjectHideFlags: 0
@@ -7950,6 +7972,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (Non-moving) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8976,6 +9003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes (Non-moving) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Scream : MonoBehaviour
 {
-	bool active = false;
-	float radius = 7;
+	bool active = false; 
+    float radius = 7;
 	List<GameObject> enemies;
 	List<GameObject> affectedEnemies;
     PlayerSync ps;
     public bool abilityUsed;
     bool useAbility;
+
+    public bool Active { get => active;} // David : La till för åtkomst i CharacterAnimation (2019-11-06)
 
     void Start()
 	{
