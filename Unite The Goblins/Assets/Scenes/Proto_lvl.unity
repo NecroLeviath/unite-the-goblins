@@ -688,6 +688,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (Non-moving)
       objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4236,7 +4241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &841143639
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4488,6 +4493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes (Non-moving) (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}
@@ -7962,6 +7972,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spikes (Non-moving) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8988,6 +9003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spikes (Non-moving) (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2003412483628112407, guid: 97bfd883218371444934855ad4893d04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3285046980894156804, guid: 97bfd883218371444934855ad4893d04,
         type: 3}

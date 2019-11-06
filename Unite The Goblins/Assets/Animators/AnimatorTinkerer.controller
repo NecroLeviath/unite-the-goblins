@@ -188,7 +188,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Roar
+  m_Name: Scream
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -201,7 +201,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: e78a4b2baeacde54ba06c5ca395cf207,
+  m_Motion: {fileID: -203655887218126122, guid: 378ebcada7d45a040890bc15db73b831,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -215,7 +215,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Roar
+  m_Name: Scream
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -229,7 +229,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: e78a4b2baeacde54ba06c5ca395cf207,
+  m_Motion: {fileID: -203655887218126122, guid: 378ebcada7d45a040890bc15db73b831,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

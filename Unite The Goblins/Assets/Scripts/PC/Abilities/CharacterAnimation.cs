@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class CharacterAnimation : MonoBehaviour
 {
     private Animator animator;
@@ -24,17 +26,32 @@ public class CharacterAnimation : MonoBehaviour
         if (characterMotor.grounded)
             speed = speedVector.magnitude;
         animator.SetFloat("speed", speed);
+        HandleTinkererScream(speed);
+
+    }
+
+    private void HandleTinkererScream(float speed)
+    {
+        // TODO: DT: Kanske en state machine senare
         if (scream)
         {
-            if (scream.Active)
+            if (scream.Active && speed > 0.2f)
             {
+                animator.SetBool("scream", false);
                 animator.SetLayerWeight(1, 1);
+            }
+            else if (scream.Active)
+            {
+                animator.SetBool("scream", true);
+                animator.SetLayerWeight(1, 0);
             }
             else
             {
+                animator.SetBool("scream", false);
                 animator.SetLayerWeight(1, 0);
             }
         }
-
+        else
+            animator.SetLayerWeight(1, 0);
     }
 }
