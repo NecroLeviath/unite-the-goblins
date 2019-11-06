@@ -258,7 +258,7 @@ MonoBehaviour:
   Templates:
   - {fileID: -927199367670048503, guid: 40d60a9a90b154446a14d76c086008d0, type: 3}
   Materials:
-  - {fileID: 2100000, guid: 6810b08c156bc5c47939e11ec1f3f7f3, type: 2}
+  - {fileID: 2100000, guid: 653a1c6fcd80d48469a73b40eaec207d, type: 2}
   GenerateCollider: 1
   ColliderOffsets: {x: 0, y: 0, z: 0}
   Z: 1
@@ -325,7 +325,7 @@ MonoBehaviour:
   Templates:
   - {fileID: -927199367670048503, guid: 40d60a9a90b154446a14d76c086008d0, type: 3}
   Materials:
-  - {fileID: 2100000, guid: 6810b08c156bc5c47939e11ec1f3f7f3, type: 2}
+  - {fileID: 2100000, guid: 653a1c6fcd80d48469a73b40eaec207d, type: 2}
   GenerateCollider: 1
   ColliderOffsets: {x: 0, y: 0, z: 0}
   Z: 1
