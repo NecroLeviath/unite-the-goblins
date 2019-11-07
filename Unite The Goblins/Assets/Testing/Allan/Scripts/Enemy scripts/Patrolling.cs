@@ -140,7 +140,7 @@ public class Patrolling : MonoBehaviour
         return isVisible;
     }
 
-        public void ToggleFear()	// For Scream ability
+    public void ToggleFear()	// For Scream ability
 	{
 		afraid = !afraid;
 	}
