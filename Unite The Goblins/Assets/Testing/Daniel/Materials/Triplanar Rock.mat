@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_New Shader Graph
+  m_Name: Triplanar Rock
   m_Shader: {fileID: -6465566751694194690, guid: b2452b9bcadd1e840b19c38fc4e7b8e2,
     type: 3}
   m_ShaderKeywords: 
@@ -32,6 +32,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Triplanar_719F6638_Texture_1:
         m_Texture: {fileID: 2800000, guid: 7f38ec5ecd0702240aedbf53c01c56ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_7CFD35F0_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 23ad36072a0b6fa4998d3721db697c7f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Triplanar_CBD14A0A_Texture_1:

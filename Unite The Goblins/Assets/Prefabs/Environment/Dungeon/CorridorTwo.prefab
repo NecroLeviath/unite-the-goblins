@@ -339,7 +339,7 @@ MonoBehaviour:
   Templates:
   - {fileID: -927199367670048503, guid: 645a7af44fd61e341a49455124ee7483, type: 3}
   Materials:
-  - {fileID: 2100000, guid: 474f5fec964527441873ada77bb8abf7, type: 2}
+  - {fileID: 2100000, guid: dd6c7b2b087a56d4eaf0ec1ee3cc8132, type: 2}
   GenerateCollider: 1
   ColliderOffsets: {x: 0, y: 0, z: 0}
   Z: 1
